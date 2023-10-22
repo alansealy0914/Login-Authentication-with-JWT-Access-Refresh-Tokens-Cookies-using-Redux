@@ -1,4 +1,3 @@
-import React from "react";
 import { useRef, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -49,6 +48,10 @@ const Login = () => {
     }
   };
 
+  const handleUserInput = (e) => setUser(e.target.value);
+
+  const handlePwdInput = (e) => setPwd(e.target.value);
+
   const content = isLoading ? (
     <h1>Loading...</h1>
   ) : (
@@ -70,7 +73,7 @@ const Login = () => {
           id="username"
           ref={userRef}
           value={user}
-          onChange={(e) => setUser(e.target.value)}
+          onChange={handleUserInput}
           autoComplete="off"
           required
         />
@@ -79,7 +82,7 @@ const Login = () => {
         <input
           type="password"
           id="password"
-          onChange={(e) => setPwd(e.target.value)}
+          onChange={handlePwdInput}
           value={pwd}
           required
         />
@@ -90,5 +93,4 @@ const Login = () => {
 
   return content;
 };
-
 export default Login;
