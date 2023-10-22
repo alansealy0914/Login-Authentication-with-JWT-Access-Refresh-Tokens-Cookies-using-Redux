@@ -70,7 +70,7 @@ const Login = () => {
           id="username"
           ref={userRef}
           value={user}
-          onChange={(e) => setUser(e.current.value)}
+          onChange={(e) => setUser(e.target.value)}
           autoComplete="off"
           required
         />
@@ -79,7 +79,7 @@ const Login = () => {
         <input
           type="password"
           id="password"
-          onChange={(e) => setPwd(e.current.value)}
+          onChange={(e) => setPwd(e.target.value)}
           value={pwd}
           required
         />
